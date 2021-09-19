@@ -10,7 +10,7 @@ AM_CFLAGS =\
 
 noinst_PROGRAMS = develop
 
-develop_SOURCES = develop.cc
+develop_SOURCES = develop.cc window.cc
 develop_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
 develop_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
 

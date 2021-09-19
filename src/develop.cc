@@ -9,14 +9,14 @@
 
 // Include GLFW
 #include <GLFW/glfw3.h>
-GLFWwindow* window;
+
 
 // Include GLM
 #include <glm/glm.hpp>
 using namespace glm;
 
 #include "space.hh"
-
+#include "window.hh"
 
 int main( void )
 {
@@ -36,14 +36,14 @@ int main( void )
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Open a window and create its OpenGL context
-	window = glfwCreateWindow( 1024, 768, "Tutorial 01", NULL, NULL);
-	if( window == NULL ){
+	oct::space::Window window(1024, 768, "Tutorial 01", NULL, NULL);
+	if(not window){
 		fprintf( stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n" );
 		getchar();
 		glfwTerminate();
 		return -1;
 	}
-	glfwMakeContextCurrent(window);
+	window.current();
 	
 	// Initialize GLEW
 	if (glewInit() != GLEW_OK) {
@@ -54,7 +54,7 @@ int main( void )
 	}
 
 	// Ensure we can capture the escape key being pressed below
-	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+	window.set_input_mode(GLFW_STICKY_KEYS, GL_TRUE);
 
 	// Dark blue background
 	oct::space::Color<GLfloat> cleanColor(0.0f, 0.0f, 0.4f, 0.0f);

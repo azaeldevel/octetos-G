@@ -1,6 +1,6 @@
 
-#ifndef OCTETOS_3D_HH
-#define OCTETOS_3D_HH
+#ifndef OCTETOS_SPACE_HH
+#define OCTETOS_SPACE_HH
 
 namespace oct::space
 {
