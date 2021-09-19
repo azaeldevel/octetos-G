@@ -8,7 +8,7 @@ namespace oct::space
 	{
 		window = glfwCreateWindow(w,h,t,m,s);
 	}
-	void Window::set_input_mode(int m, int v)
+	void Window::set_input(int m, int v)
 	{
 		glfwSetInputMode(window, m, v);
 	}

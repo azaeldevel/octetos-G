@@ -54,7 +54,7 @@ int main( void )
 	}
 
 	// Ensure we can capture the escape key being pressed below
-	window.set_input_mode(GLFW_STICKY_KEYS, GL_TRUE);
+	window.set_input(GLFW_STICKY_KEYS, GL_TRUE);
 
 	// Dark blue background
 	oct::space::Color<GLfloat> cleanColor(0.0f, 0.0f, 0.4f, 0.0f);
