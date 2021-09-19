@@ -11,14 +11,11 @@ AC_PROG_CXX
 
 
 
+LT_INIT
 
+PKG_CHECK_MODULES(OCTETOS,[octetos-core])
 
-
-
-
-
-
-
+PKG_CHECK_MODULES(GL,[glew] [glfw3] [glm])
 
 
 AC_OUTPUT([
