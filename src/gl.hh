@@ -2,7 +2,7 @@
 #ifndef OCTETOS_SPACE_HH
 #define OCTETOS_SPACE_HH
 
-namespace oct::space
+namespace oct::gl
 {
 
 template<typename T> struct Color
@@ -22,12 +22,12 @@ template<typename T> struct Color
 		blue = b;
 		alpha = a;
 	}
-};
 
-template<typename T> void clear(const Color<T>& color)
-{
-	glClearColor(color.red,color.green,color.blue,color.alpha);
-}
+	void clear()
+	{
+		glClearColor(red,green,blue,alpha);
+	}
+};
 
 
 }

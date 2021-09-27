@@ -14,6 +14,9 @@ GLFWwindow* window;
 #include <glm/glm.hpp>
 using namespace glm;
 
+#include "gl.hh"
+#include "window.hh"
+
 #define GLEW_STATIC
 
 int main( void )
@@ -32,14 +35,14 @@ int main( void )
 
 
 	// Open a window and create its OpenGL context
-	window = glfwCreateWindow( 1024, 768, "Tutorial 01", NULL, NULL);
+	oct::gl::Window window( 1024, 768, "OpenGL C++ Objects", NULL, NULL);
 	if( window == NULL ){
 		fprintf( stderr, "Failed to open GLFW window.\n" );
 		getchar();
 		glfwTerminate();
 		return -1;
 	}
-	glfwMakeContextCurrent(window);
+	window.current();
 
 	// Initialize GLEW
 	if (glewInit() != GLEW_OK) {
@@ -53,7 +56,8 @@ int main( void )
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 
 	// Dark blue background
-	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+	oct::gl::Color<float> colorClear(0.0f, 0.0f, 0.4f, 0.0f);
+	colorClear.clear();
 
 	do{
 		// Clear the screen. It's not mentioned before Tutorial 02, but it can cause flickering, so it's there nonetheless.

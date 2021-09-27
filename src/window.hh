@@ -7,14 +7,19 @@
 #include <string>
 
 
-namespace oct::g
+namespace oct::gl
 {
 
 	class Window
 	{
 	public:
 		Window(int width, int height, const char *title, GLFWmonitor *monitor, GLFWwindow *share);
+		Window(int width, int height, const char *title);
+		//>>wrappeds
 		void set_input(int mode, int value);
+		void swap_buffer();
+		int getKey(int key);
+		//<<wrappeds
 		
 		operator GLFWwindow*();
 		
