@@ -37,7 +37,7 @@ int main( void )
 
 	// Open a window and create its OpenGL context
 	oct::space::Window window(1024, 768, "Tutorial 01", NULL, NULL);
-	if(not window){
+	if(not (GLFWwindow*)window){
 		fprintf( stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n" );
 		getchar();
 		glfwTerminate();
