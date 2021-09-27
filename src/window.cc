@@ -1,7 +1,7 @@
 
 #include "window.hh"
 
-namespace oct::space
+namespace oct::g
 {
 
 	Window::Window(int w, int h, const char *t, GLFWmonitor *m, GLFWwindow *s)

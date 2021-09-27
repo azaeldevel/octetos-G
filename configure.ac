@@ -1,5 +1,5 @@
 
-AC_INIT(octetos-3D, 0.1.0-alpha, azael.devel@gmail.com)
+AC_INIT(octetos-glpp, 0.1.0-alpha, azael.devel@gmail.com)
 
 AC_CONFIG_HEADERS([config.h])
 
@@ -15,7 +15,7 @@ LT_INIT
 
 PKG_CHECK_MODULES(OCTETOS,[octetos-core])
 
-PKG_CHECK_MODULES(GL,[glew] [glfw3] [glm])
+PKG_CHECK_MODULES(GL,[glew] [glfw3] [glm] )
 
 
 AC_OUTPUT([

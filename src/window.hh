@@ -7,7 +7,7 @@
 #include <string>
 
 
-namespace oct::space
+namespace oct::g
 {
 
 	class Window
