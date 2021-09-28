@@ -61,6 +61,44 @@ void testDevelop()
 		if((unsigned int)triangle1_buffer[i] == 8-i) CU_ASSERT(true)
 		else CU_ASSERT(false)
  	}
+ 	
+ 	oct::gl::Squared<GLfloat> squared1;
+ 	std::cout << "sizeof(oct::gl::Triangle<GLfloat>) = " << sizeof(oct::gl::Triangle<GLfloat>) << "\n";
+ 	std::cout << "sizeof(squared1) = " << sizeof(squared1) << "\n";
+	if(sizeof(squared1) == sizeof(oct::gl::Triangle<GLfloat>) * 2) 
+	{
+		CU_ASSERT(true);
+	}
+	else 
+	{
+		CU_ASSERT(false);
+	}
+	squared1.triangles[0].vertex[0].x = 17.0f;
+	squared1.triangles[0].vertex[0].y = 16.0f;
+	squared1.triangles[0].vertex[0].z = 15.0f;
+	squared1.triangles[0].vertex[1].x = 14.0f;
+	squared1.triangles[0].vertex[1].y = 13.0f;
+	squared1.triangles[0].vertex[1].z = 12.0f;
+	squared1.triangles[0].vertex[2].x = 11.0f;
+	squared1.triangles[0].vertex[2].y = 10.0f;
+	squared1.triangles[0].vertex[2].z = 9.0f;
+	squared1.triangles[1].vertex[0].x = 8.0f;
+	squared1.triangles[1].vertex[0].y = 7.0f;
+	squared1.triangles[1].vertex[0].z = 6.0f;
+	squared1.triangles[1].vertex[1].x = 5.0f;
+	squared1.triangles[1].vertex[1].y = 4.0f;
+	squared1.triangles[1].vertex[1].z = 3.0f;
+	squared1.triangles[1].vertex[2].x = 2.0f;
+	squared1.triangles[1].vertex[2].y = 1.0f;
+	squared1.triangles[1].vertex[2].z = 0.0f;
+	
+	GLfloat* squared1_buffer = &squared1.triangles[0].vertex[0].x;
+	for(unsigned int i = 0; i < 18; i++)
+	{
+		std::cout << "squared1_buffer[" << i << "] = " << (unsigned int)squared1_buffer[i] << "\n";
+		if((unsigned int)squared1_buffer[i] == 17 - i) CU_ASSERT(true)
+		else CU_ASSERT(false)
+ 	}
 }
 
 

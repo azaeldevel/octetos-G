@@ -31,7 +31,7 @@ template<typename T> struct Color
 	}
 };
 
-template<typename T> struct Figure
+template<typename T> struct Shape
 {
 };
 
@@ -47,17 +47,45 @@ template<typename T> struct Vertex3D : public Vertex2D<T>
 	
 };
 
-template<typename T> struct Triangle : public Figure<T>
+template<typename T> struct Triangle : public Shape<T>
 {
 	Vertex3D<T> vertex[3];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
 };
 
-template<typename T> struct Square : public Figure<T>
+template<typename T> struct Squared : public Shape<T>
 {
-	Triangle<T> vertex[2];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
+	Triangle<T> triangles[2];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
+
+	Squared()
+	{
+	}
+	Squared(T x1,T y1,T z1,T x2,T y2,T z2)
+	{
+		//T1
+		triangles[0].vertex[0].x = x1;
+		triangles[0].vertex[0].y = y1;
+		triangles[0].vertex[0].z = z1;
+		triangles[0].vertex[1].x = x1;
+		triangles[0].vertex[1].y = y2;
+		triangles[0].vertex[1].z = z1;
+		triangles[0].vertex[2].x = x2;
+		triangles[0].vertex[2].y = y1;
+		triangles[0].vertex[2].z = z1;
+
+		//T2
+		triangles[1].vertex[0].x = x1;
+		triangles[1].vertex[0].y = y2;
+		triangles[1].vertex[0].z = z1;
+		triangles[1].vertex[1].x = x2;
+		triangles[1].vertex[1].y = y2;
+		triangles[1].vertex[1].z = z2;
+		triangles[1].vertex[2].x = x2;
+		triangles[1].vertex[2].y = y1;
+		triangles[1].vertex[2].z = z2;
+	}
 };
 
-template<typename T> struct Cube : public Figure<T>
+template<typename T> struct Cube : public Shape<T>
 {
 	Triangle<T> triangles[12];
 

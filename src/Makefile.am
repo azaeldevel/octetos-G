@@ -8,7 +8,7 @@ AM_CFLAGS =\
 	 -Wall\
 	 -g
 
-noinst_PROGRAMS = develop TA-02 
+noinst_PROGRAMS = develop TA-02 TA-02-squared
 
 lib_LTLIBRARIES = liboctetos-ogl.la
 
@@ -21,6 +21,10 @@ develop_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
 TA_02_SOURCES = TA-02.cc shader.cc
 TA_02_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
 TA_02_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
+
+TA_02_squared_SOURCES = TA-02-squared.cc shader.cc
+TA_02_squared_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
+TA_02_squared_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
 
 TA_03_SOURCES = TA-03.cc shader.cc
 TA_03_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
