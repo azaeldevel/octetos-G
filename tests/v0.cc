@@ -27,7 +27,7 @@ void testDevelop()
 	}
 	
 	oct::gl::Vertex3D<GLfloat> vertex3D;
-	if(sizeof(vertex3D) == sizeof(GLfloat) * 3) 
+	if(sizeof(oct::gl::Vertex3D<GLfloat>) == sizeof(GLfloat) * 3) 
 	{
 		CU_ASSERT(true);
 	}
@@ -63,8 +63,8 @@ void testDevelop()
  	}
  	
  	oct::gl::Squared<GLfloat> squared1;
- 	std::cout << "sizeof(oct::gl::Triangle<GLfloat>) = " << sizeof(oct::gl::Triangle<GLfloat>) << "\n";
- 	std::cout << "sizeof(squared1) = " << sizeof(squared1) << "\n";
+ 	//std::cout << "sizeof(oct::gl::Triangle<GLfloat>) = " << sizeof(oct::gl::Triangle<GLfloat>) << "\n";
+ 	//std::cout << "sizeof(squared1) = " << sizeof(squared1) << "\n";
 	if(sizeof(squared1) == sizeof(oct::gl::Triangle<GLfloat>) * 2) 
 	{
 		CU_ASSERT(true);
@@ -95,7 +95,7 @@ void testDevelop()
 	GLfloat* squared1_buffer = &squared1.triangles[0].vertex[0].x;
 	for(unsigned int i = 0; i < 18; i++)
 	{
-		std::cout << "squared1_buffer[" << i << "] = " << (unsigned int)squared1_buffer[i] << "\n";
+		//std::cout << "squared1_buffer[" << i << "] = " << (unsigned int)squared1_buffer[i] << "\n";
 		if((unsigned int)squared1_buffer[i] == 17 - i) CU_ASSERT(true)
 		else CU_ASSERT(false)
  	}

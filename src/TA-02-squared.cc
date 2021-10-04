@@ -62,7 +62,7 @@ int main( void )
 	// Get a handle for our buffers
 	GLuint vertexPosition_modelspaceID = glGetAttribLocation(programID, "vertexPosition_modelspace");
 
-	oct::gl::Squared<GLfloat> squared;//(-0.5f,-0.5f,-0.5f,0.5f,0.5f,0.5f)
+	oct::gl::Squared<GLfloat> squared(-0.5f,-0.5f,-0.5f,0.5f,0.5f,0.5f);//
 	
 	GLuint vertexbuffer;
 	glGenBuffers(1, &vertexbuffer);

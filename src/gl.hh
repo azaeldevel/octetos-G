@@ -31,30 +31,29 @@ template<typename T> struct Color
 	}
 };
 
-template<typename T> struct Shape
-{
-};
-
 template<typename T> struct Vertex2D
 {
 	T x,y;
-	
 };
 
 template<typename T> struct Vertex3D : public Vertex2D<T>
 {
 	T z;
-	
 };
 
-template<typename T> struct Triangle : public Shape<T>
+
+template<typename T> struct Shape
+{
+};
+
+template<typename T> struct Triangle
 {
 	Vertex3D<T> vertex[3];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
 };
 
-template<typename T> struct Squared : public Shape<T>
+template<typename T> struct Squared
 {
-	Triangle<T> triangles[2];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
+	Triangle<T> triangles[2];//P1 es esquina inferior izquierda, luego la superior y al final la derecha
 
 	Squared()
 	{
