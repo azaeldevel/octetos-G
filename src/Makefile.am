@@ -8,7 +8,7 @@ AM_CFLAGS =\
 	 -Wall\
 	 -g
 
-noinst_PROGRAMS = develop TA-02 TA-02-squared
+noinst_PROGRAMS = develop TA-02 TA-02-squared TA-04
 
 lib_LTLIBRARIES = liboctetos-ogl.la
 

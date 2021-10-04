@@ -56,6 +56,10 @@ template<typename T> struct Square
 	}
 	Square(T x1,T y1,T z1,T x2,T y2,T z2)
 	{
+		set(x1,y1,z1,x2,y2,z2);
+	}
+	void set(T x1,T y1,T z1,T x2,T y2,T z2)
+	{
 		//T1
 		triangles[0].vertex[0].x = x1;
 		triangles[0].vertex[0].y = y1;
@@ -82,7 +86,7 @@ template<typename T> struct Square
 
 template<typename T> struct Cube
 {
-	Triangle<T> triangles[12];
+	Square<T> square[6];
 
 	/**
 	*\brief P1 es el punto izquierdo tracero inferior, P2 es punto superior derecho frontal
@@ -90,32 +94,17 @@ template<typename T> struct Cube
 	Cube(T x1,T y1,T z1,T x2,T y2,T z2)
 	{
 		//Lado 1 : atras
-		//T1
-		//T2
-
+		square[0].set(x1,y1,z1,x2,y2,z1);
 		//Lado 2 : derecho
-		//T3
-		//T4
-		
+		square[1].set(x2,y1,z1,x2,y2,z2);		
 		//Lado 3 : frente
-		//T5;
-		//T6
-
+		square[2].set(x2,y1,z2,x1,y2,z2);
 		//Lado 4 : izquierdo
-		//T7
-		//T8
-
+		square[3].set(x1,y1,z1,x1,y2,z2);
+		//Lado 6 : abajo
+		square[4].set(x1,y1,z1,x2,y1,z2);
 		//Lado 5 : arriba
-		//T9
-		//T10
-
-		//Lado 6 : abajo		
-		//T11
-		//T10
-	}
-	virtual void buffer(GLenum usage)
-	{
-		glBufferData(GL_ARRAY_BUFFER, sizeof(triangles), triangles, usage);
+		square[5].set(x1,y2,z1,x2,y2,z2);
 	}
 };
 
