@@ -21,7 +21,7 @@ void testDevelop()
 	{
 		CU_ASSERT(true);
 	}
-	else 
+	else
 	{
 		CU_ASSERT(false);
 	}
@@ -62,7 +62,7 @@ void testDevelop()
 		else CU_ASSERT(false)
  	}
  	
- 	oct::gl::Squared<GLfloat> squared1;
+ 	oct::gl::Square<GLfloat> squared1;
  	//std::cout << "sizeof(oct::gl::Triangle<GLfloat>) = " << sizeof(oct::gl::Triangle<GLfloat>) << "\n";
  	//std::cout << "sizeof(squared1) = " << sizeof(squared1) << "\n";
 	if(sizeof(squared1) == sizeof(oct::gl::Triangle<GLfloat>) * 2) 
