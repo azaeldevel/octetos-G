@@ -166,6 +166,10 @@ template<typename T> struct Cube
 	{
 		set(colors);
 	}
+	Cube(const Color<T>& color)
+	{
+		set(color);
+	}
 	void set(const Color<T> colors[6])
 	{
 		//Lado 1 : atras
@@ -180,6 +184,21 @@ template<typename T> struct Cube
 		square[4].set(colors[4]);
 		//Lado 5 : arriba
 		square[5].set(colors[5]);
+	}
+	void set(const Color<T>& color)
+	{
+		//Lado 1 : atras
+		square[0].set(color);
+		//Lado 2 : derecho
+		square[1].set(color);		
+		//Lado 3 : frente
+		square[2].set(color);
+		//Lado 4 : izquierdo
+		square[3].set(color);
+		//Lado 6 : abajo
+		square[4].set(color);
+		//Lado 5 : arriba
+		square[5].set(color);
 	}
 };
 
