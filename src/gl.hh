@@ -117,21 +117,21 @@ template<typename T> struct Square
 		triangles[0].vertex[0].z = z1;
 		triangles[0].vertex[1].x = x1;
 		triangles[0].vertex[1].y = y2;
-		triangles[0].vertex[1].z = z1;
+		triangles[0].vertex[1].z = z2;
 		triangles[0].vertex[2].x = x2;
 		triangles[0].vertex[2].y = y1;
 		triangles[0].vertex[2].z = z2;
 
 		//T2
-		triangles[1].vertex[0].x = x1;
+		triangles[1].vertex[0].x = x2;
 		triangles[1].vertex[0].y = y2;
-		triangles[1].vertex[0].z = z1;
+		triangles[1].vertex[0].z = z2;
 		triangles[1].vertex[1].x = x2;
-		triangles[1].vertex[1].y = y2;
-		triangles[1].vertex[1].z = z2;
-		triangles[1].vertex[2].x = x2;
-		triangles[1].vertex[2].y = y1;
-		triangles[1].vertex[2].z = z2;
+		triangles[1].vertex[1].y = y1;
+		triangles[1].vertex[1].z = z1;
+		triangles[1].vertex[2].x = x1;
+		triangles[1].vertex[2].y = y2;
+		triangles[1].vertex[2].z = z1;
 	}
 	void set(const Color<T>& color)
 	{
