@@ -74,7 +74,7 @@ int main( void )
 	glm::mat4 Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
 	// Camera matrix
 	glm::mat4 View       = glm::lookAt(
-								glm::vec3(4,3,-3), // Camera is at (4,3,-3), in World Space
+								glm::vec3(4,3,-3), // Camera is at (4,3,-3), in World Space	
 								glm::vec3(0,0,0), // and looks at the origin
 								glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
 						   );
@@ -89,12 +89,12 @@ int main( void )
 
 	// One color for each vertex. They were generated randomly.
 	oct::gl::Color<GLfloat> colors[6];
-	colors[0] = oct::gl::Color<GLfloat>::white;
-	colors[1] = oct::gl::Color<GLfloat>::white;
-	colors[2] = oct::gl::Color<GLfloat>::red;
-	colors[3] = oct::gl::Color<GLfloat>::blue;
+	colors[0] = oct::gl::Color<GLfloat>::red;
+	colors[1] = oct::gl::Color<GLfloat>::blue;
+	colors[2] = oct::gl::Color<GLfloat>::yellow;
+	colors[3] = oct::gl::Color<GLfloat>::purple;
 	colors[4] = oct::gl::Color<GLfloat>::white;
-	colors[5] = oct::gl::Color<GLfloat>::white;
+	colors[5] = oct::gl::Color<GLfloat>::black;
 	oct::gl::Cube<GLfloat> cubeColors(colors);
 
 	GLuint vertexbuffer;

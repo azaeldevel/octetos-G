@@ -52,12 +52,18 @@ template<typename T> struct Color
 	static const Color<T> red;
 	static const Color<T> green;
 	static const Color<T> blue;
+	static const Color<T> purple;
+	static const Color<T> brow;
+	static const Color<T> yellow;
 };
 template<typename T> const Color<T> Color<T>::white = Color(1,1,1);
 template<typename T> const Color<T> Color<T>::black = Color(0,0,0);
 template<typename T> const Color<T> Color<T>::red = Color(1,0,0);
 template<typename T> const Color<T> Color<T>::green = Color(0,1,0);
 template<typename T> const Color<T> Color<T>::blue = Color(0,0,1);
+template<typename T> const Color<T> Color<T>::purple = Color(1,0,1);
+template<typename T> const Color<T> Color<T>::yellow = Color(1,1,0);
+template<typename T> const Color<T> Color<T>::brow = Color(0,1,1);
 
 
 template<typename T> struct Vertex2D
