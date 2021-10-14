@@ -85,7 +85,7 @@ int main( void )
 
 	// Our vertices. Tree consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
 	// A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
-	oct::gl::Cube<GLfloat> cube(-1.0f,-1.0f,-1.0f,1.0f,1.0f,1.0f);
+	oct::gl::d3::Cube<GLfloat> cube(-1.0f,-1.0f,-1.0f,1.0f,1.0f,1.0f);
 
 	// One color for each vertex. They were generated randomly.
 	oct::gl::Color<GLfloat> colors[6];
@@ -95,7 +95,7 @@ int main( void )
 	colors[3] = oct::gl::Color<GLfloat>::purple;
 	colors[4] = oct::gl::Color<GLfloat>::white;
 	colors[5] = oct::gl::Color<GLfloat>::black;
-	oct::gl::Cube<GLfloat> cubeColors(colors);
+	oct::gl::d3::Cube<GLfloat> cubeColors(colors);
 
 	GLuint vertexbuffer;
 	glGenBuffers(1, &vertexbuffer);

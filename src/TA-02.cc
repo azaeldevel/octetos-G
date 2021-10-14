@@ -28,8 +28,8 @@ int main( void )
 	}
 
 	glfwWindowHint(GLFW_SAMPLES, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
 
 	// Open a window and create its OpenGL context
@@ -62,7 +62,7 @@ int main( void )
 	// Get a handle for our buffers
 	GLuint vertexPosition_modelspaceID = glGetAttribLocation(programID, "vertexPosition_modelspace");
 
-	oct::gl::Triangle<GLfloat> triangle;
+	oct::gl::d3::Triangle<GLfloat> triangle;
 	triangle.vertex[0].x = -1.0f;
 	triangle.vertex[0].y = -1.0f;
 	triangle.vertex[0].z = 0.0f;
