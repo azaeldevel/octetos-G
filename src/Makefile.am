@@ -19,4 +19,4 @@ develop_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
 
 liboctetos_G___la_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)  -DOCTETOS_G_LOW
 liboctetos_G___la_LIBADD = $(OCTETOS_LIBS) $(GL_LIBS)
-liboctetos_G___la_SOURCES = window.cc Shader.cc Color.cc
+liboctetos_G___la_SOURCES = window.cc Shader.cc Color.cc gl.cc
