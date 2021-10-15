@@ -26,6 +26,7 @@ PKG_CHECK_MODULES(GL,[glew] [glfw3] [glm] )
 AC_OUTPUT([
 Makefile
 src/Makefile
+B01/Makefile
 B02/Makefile
 tests/Makefile
 ])

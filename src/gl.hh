@@ -43,22 +43,22 @@ namespace oct::gl
 }
 namespace oct::gl::d2
 {
-	template<typename T> struct Vertex
+	struct Vertex
 	{
-		T x,y;
+		real x,y;
 	};
 }
 namespace oct::gl::d3
 {
 
-	template<typename T> struct Vertex : public d2::Vertex<T>
+	struct Vertex : public d2::Vertex
 	{
-		T z;
+		real z;
 	};
 
-	template<typename T> struct Triangle
+	struct Triangle
 	{
-		Vertex<T> vertex[3];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
+		Vertex vertex[3];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
 
 		void set(const Color& color)
 		{
@@ -74,9 +74,9 @@ namespace oct::gl::d3
 		}
 	};
 
-	template<typename T> struct Square
+	struct Square
 	{
-		Triangle<T> triangles[2];//P1 es esquina inferior izquierda, luego la superior y al final la derecha
+		Triangle triangles[2];//P1 es esquina inferior izquierda, luego la superior y al final la derecha
 
 		Square()
 		{
@@ -84,11 +84,11 @@ namespace oct::gl::d3
 		/**
 		*\brief P1 es vertice inferior izquierdo, P2 es vertice superio derecho
 		**/
-		Square(T x1,T y1,T z1,T x2,T y2,T z2)
+		Square(real x1,real y1,real z1,real x2,real y2,real z2)
 		{
 			set(x1,y1,z1,x2,y2,z2);
 		}
-		void set(T x1,T y1,T z1,T x2,T y2,T z2)
+		void set(real x1,real y1,real z1,real x2,real y2,real z2)
 		{
 			//T1
 			triangles[0].vertex[0].x = x1;
@@ -119,14 +119,14 @@ namespace oct::gl::d3
 		}
 	};
 
-	template<typename T> struct Cube
+	struct Cube
 	{
-		Square<T> square[6];
+		Square square[6];
 
 		/**
 		*\brief P1 es el punto izquierdo tracero inferior, P2 es punto superior derecho frontal
 		**/
-		Cube(T x1,T y1,T z1,T x2,T y2,T z2)
+		Cube(real x1,real y1,real z1,real x2,real y2,real z2)
 		{
 			//Lado 1 : atras
 			square[0].set(x1,y1,z1,x2,y2,z1);

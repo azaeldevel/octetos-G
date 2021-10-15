@@ -1,5 +1,5 @@
 
-SUBDIRS = src B02 tests 
+SUBDIRS = src B01 B02 tests 
 
 dist_doc_DATA = \
 	README \
