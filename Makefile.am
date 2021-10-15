@@ -1,5 +1,12 @@
 
-SUBDIRS = src B01 B02 tests 
+SUBDIRS = src
+if WITH_BOOKS
+SUBDIRS += B01 B02
+endif
+if WITH_TESTS
+SUBDIRS += tests
+endif
+
 
 dist_doc_DATA = \
 	README \

@@ -17,11 +17,16 @@ PKG_CHECK_MODULES(OCTETOS,[octetos-core])
 
 PKG_CHECK_MODULES(GL,[glew] [glfw3] [glm] )
 
-	AM_CONDITIONAL(WITH_TESTS, test x"$with_tests" = "xyes")
-	AC_ARG_WITH([tests], AS_HELP_STRING([--with-tests], [Compilando con soporte para Tests]))
-	if test "x$with_tests" = "xyes"; then 
-		PKG_CHECK_MODULES(CUNIT,cunit)
-	fi
+AM_CONDITIONAL(WITH_TESTS, test x"$with_tests" = "xyes")
+AC_ARG_WITH([tests], AS_HELP_STRING([--with-tests], [Compilando con soporte para Tests]))
+if test "x$with_tests" = "xyes"; then 
+	PKG_CHECK_MODULES(CUNIT,cunit)
+fi
+
+AM_CONDITIONAL(WITH_BOOKS, test x"$with_books" = "xyes")
+AC_ARG_WITH([books], AS_HELP_STRING([--with-books], [Compilando con libros de ejemplo]))
+
+
 
 AC_OUTPUT([
 Makefile
