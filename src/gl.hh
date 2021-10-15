@@ -4,65 +4,41 @@
 
 #include <GL/glew.h>
 
+
 namespace oct::gl
 {
-	template<typename T> struct Color
+#ifdef OCTETOS_G_LOW 
+	typedef GLfloat real;
+#elif OCTETOS_G_HIGH
+	typedef GLfdouble real;
+#else 
+	#error "No se definio la presicion."
+#endif
+
+	struct Color
 	{
-		T r;
-		T g;
-		T b;
-		T a;
+		real r;
+		real g;
+		real b;
+		real a;
 
-		Color()
-		{
-		}
-		Color(T r,T g,T b,T a)
-		{
-			this->r = r;
-			this->g = g;
-			this->b = b;
-			this->a = a;
-		}
-		Color(T r,T g,T b)
-		{
-			this->r = r;
-			this->g = g;
-			this->b = b;
-			this->a = 1;//opaco
-		}
+		Color();
+		Color(real r,real g,real b,real a);
+		Color(real r,real g,real b);
 
-		void clear()
-		{
-			glClearColor(r,g,b,a);
-		}
+		void clear();
 
-		Color inverse() const
-		{
-			Color color;
-			color.r = T(1) - r;
-			color.g = T(1) - g;
-			color.b = T(1) - b;
-			color.a = a;
-			return  color;
-		}
+		Color inverse() const;
 
-		static const Color<T> white;
-		static const Color<T> black;
-		static const Color<T> red;
-		static const Color<T> green;
-		static const Color<T> blue;
-		static const Color<T> purple;
-		static const Color<T> brow;
-		static const Color<T> yellow;
+		static const Color white;
+		static const Color black;
+		static const Color red;
+		static const Color green;
+		static const Color blue;
+		static const Color purple;
+		static const Color brow;
+		static const Color yellow;
 	};
-	template<typename T> const Color<T> Color<T>::white = Color(1,1,1);
-	template<typename T> const Color<T> Color<T>::black = Color(0,0,0);
-	template<typename T> const Color<T> Color<T>::red = Color(1,0,0);
-	template<typename T> const Color<T> Color<T>::green = Color(0,1,0);
-	template<typename T> const Color<T> Color<T>::blue = Color(0,0,1);
-	template<typename T> const Color<T> Color<T>::purple = Color(1,0,1);
-	template<typename T> const Color<T> Color<T>::yellow = Color(1,1,0);
-	template<typename T> const Color<T> Color<T>::brow = Color(0,1,1);
 
 }
 namespace oct::gl::d2
@@ -84,7 +60,7 @@ namespace oct::gl::d3
 	{
 		Vertex<T> vertex[3];//P1 es esquina inferior izquierda, luego la suoerior y al final la derecha
 
-		void set(const Color<T>& color)
+		void set(const Color& color)
 		{
 			vertex[0].x = color.r;
 			vertex[0].y = color.g;
@@ -136,7 +112,7 @@ namespace oct::gl::d3
 			triangles[1].vertex[2].y = y2;
 			triangles[1].vertex[2].z = z1;
 		}
-		void set(const Color<T>& color)
+		void set(const Color& color)
 		{
 			triangles[0].set(color);
 			triangles[1].set(color);
@@ -165,15 +141,15 @@ namespace oct::gl::d3
 			//Lado 5 : arriba
 			square[5].set(x1,y2,z1,x2,y2,z2);
 		}
-		Cube(const Color<T> colors[6])
+		Cube(const Color colors[6])
 		{
 			set(colors);
 		}
-		Cube(const Color<T>& color)
+		Cube(const Color& color)
 		{
 			set(color);
 		}
-		void set(const Color<T> colors[6])
+		void set(const Color colors[6])
 		{
 			//Lado 1 : atras
 			square[0].set(colors[0]);
@@ -188,7 +164,7 @@ namespace oct::gl::d3
 			//Lado 5 : arriba
 			square[5].set(colors[5]);
 		}
-		void set(const Color<T>& color)
+		void set(const Color& color)
 		{
 			//Lado 1 : atras
 			square[0].set(color);

@@ -8,53 +8,15 @@ AM_CFLAGS =\
 	 -Wall\
 	 -g
 
-noinst_PROGRAMS = TB-01 TB-02 TB-03
 
 lib_LTLIBRARIES = liboctetos-G++.la
-
 
 
 develop_SOURCES = develop.cc window.cc shader.cc
 develop_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
 develop_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
 
-TA_02_SOURCES = TA-02.cc shader.cc
-TA_02_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TA_02_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
 
-TA_02_squared_SOURCES = TA-02-squared.cc shader.cc
-TA_02_squared_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TA_02_squared_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-TA_03_SOURCES = TA-03.cc shader.cc
-TA_03_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TA_03_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-TA_04_SOURCES = TA-04.cc shader.cc
-TA_04_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TA_04_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-TA_05_SOURCES = TA-05.cc shader.cc texture.cc
-TA_05_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TA_05_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-TA_06_SOURCES = TA-06.cc shader.cc texture.cc controls.cc
-TA_06_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TA_06_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-
-TB_01_SOURCES = TB-01.cc
-TB_01_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TB_01_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-TB_02_SOURCES = TB-02.cc Shader.cc
-TB_02_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TB_02_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-TB_03_SOURCES = TB-03.cc Shader.cc
-TB_03_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)
-TB_03_LDADD = $(OCTETOS_LIBS) $(GL_LIBS)
-
-liboctetos_G___la_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)  
+liboctetos_G___la_CXXFLAGS = $(OCTETOS_CFLAGS) $(GL_CFLAGS)  -DOCTETOS_G_LOW
 liboctetos_G___la_LIBADD = $(OCTETOS_LIBS) $(GL_LIBS)
-liboctetos_G___la_SOURCES = window.cc shader.cc
+liboctetos_G___la_SOURCES = window.cc Shader.cc Color.cc

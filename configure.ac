@@ -1,5 +1,5 @@
 
-AC_INIT(octetos-glpp, 0.1.0-alpha, azael.devel@gmail.com)
+AC_INIT(octetos-G++, 0.1.0-alpha, azael.devel@gmail.com)
 
 AC_CONFIG_HEADERS([config.h])
 
@@ -26,5 +26,6 @@ PKG_CHECK_MODULES(GL,[glew] [glfw3] [glm] )
 AC_OUTPUT([
 Makefile
 src/Makefile
+B02/Makefile
 tests/Makefile
 ])
