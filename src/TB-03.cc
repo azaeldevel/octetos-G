@@ -33,7 +33,7 @@ int main( void )
 
 
 	// Open a window and create its OpenGL context
-	window = glfwCreateWindow( 1024, 768, "Book 1 - Excesice 2", NULL, NULL);
+	window = glfwCreateWindow( 1024, 768, "Book 1 - Exercise 3", NULL, NULL);
 	if( window == NULL ){
 		fprintf( stderr, "Failed to open GLFW window.\n" );
 		getchar();
