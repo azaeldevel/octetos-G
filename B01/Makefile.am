@@ -1,3 +1,4 @@
+ # http://www.opengl-tutorial.org/es/beginners-tutorials/
 
 AM_CPPFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\""$(localedir)"\" \
